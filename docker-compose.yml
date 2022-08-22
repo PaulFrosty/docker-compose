@@ -1,0 +1,13 @@
+version: "3"
+services:
+  apache:
+    image: paheen/apache
+    ports:
+      - "8080:80"
+  nginx:
+    image: paheen/nginx
+    ports:
+      - "80:80"
+    network_mode: host
+    depends_on:
+      - apache
